@@ -84,7 +84,7 @@
         <div class="col-lg-8 mx-auto">
           <h2>Getting started from the repo</h2>
           <h4>Cloud Database Setup</h4>
-          <ol>
+          <ul>
             <li>setup an account at mlab.com</li>
             <li>in your dashboard, click creat new under MongoDB Deployments</li>
             <li>select amazon as your cloud provider and select sandbox as your plan type</li>
@@ -95,9 +95,9 @@
             <li>inside your .env file add:<br />
               DB_USER=[username]<br />
               DB_PASS=[password]</li>
-          </ol>
+          </ul>
           <h4>API key setup</h4>
-          <ol>
+          <ul>
             <li>create a Google API key</li>
             <li>enable Google Places API Web Service</li>
             <li>enable Google Maps Geocoding API</li>
@@ -111,16 +111,16 @@
               GOOGLE_API_KEY=[api key]</li>
             <li>inside of map.jsx insert your API key as a string on line 86</li>
 
-          </ol>
+          </ul>
           <h4>OAuth 2.0 client ID</h4>
           <p>This is necessary to enable Google sign-in</p>
-          <ol>
+          <ul>
             <li>create a client ID from console.developers.google.com for OAuth 2.0 client IDs <br />
               https://developers.google.com/identity/sign-in/web/devconsole-project is a helpful tutorial</li>
             <li>set the GOOGLE_CLIENT_ID, GOOGLE_CLIENT_SECRET, and LOCAL_GOOGLE_REDIRECT variables in your .env file <br />
               these three variables are all accessed in server/index.js when the GoogleStrategy is defined for passport</li>
             <li>pay attention to step 5 in the tutorial above: you must authorize separate redirect urls for testing on your local machine and the deployed website</li>
-          </ol>
+          </ul>
         </div>
       </div>
     </section>
@@ -155,7 +155,7 @@
     </section>
 
     <!-- Map Section -->
-    <div id="map"></div>
+    <!-- <div id="map"></div> -->
 
     <!-- Footer -->
     <footer>
