@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Grayscale - Start Bootstrap Theme</title>
+    <title>uchews homepage</title>
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -28,7 +28,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
       <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="#page-top">Start Bootstrap</a>
+        <a class="navbar-brand js-scroll-trigger" href="https://frozen-beach-49440.herokuapp.com/">Visit uchews</a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           Menu
           <i class="fa fa-bars"></i>
@@ -39,7 +39,7 @@
               <a class="nav-link js-scroll-trigger" href="#about">About</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#download">Download</a>
+              <a class="nav-link js-scroll-trigger" href="#download">Getting Started</a>
             </li>
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
@@ -55,9 +55,8 @@
         <div class="container">
           <div class="row">
             <div class="col-lg-8 mx-auto">
-              <h1 class="brand-heading">Grayscale</h1>
-              <p class="intro-text">A free, responsive, one page Bootstrap theme.
-                <br>Created by Start Bootstrap.</p>
+              <h1 class="brand-heading">uchews</h1>
+              <p class="intro-text">The deciding factor in a common problem: indecision when choosing a restaurant.</p>
               <a href="#about" class="btn btn-circle js-scroll-trigger">
                 <i class="fa fa-angle-double-down animated"></i>
               </a>
@@ -72,14 +71,8 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-8 mx-auto">
-            <h2>About Grayscale</h2>
-            <p>Grayscale is a free Bootstrap theme created by Start Bootstrap. It can be yours right now, simply download the template on
-              <a href="http://startbootstrap.com/template-overviews/grayscale/">the preview page</a>. The theme is open source, and you can use it for any purpose, personal or commercial.</p>
-            <p>This theme features stock photos by
-              <a href="http://gratisography.com/">Gratisography</a>
-              along with a custom Google Maps skin courtesy of
-              <a href="http://snazzymaps.com/">Snazzy Maps</a>.</p>
-            <p>Grayscale includes full HTML, CSS, and custom JavaScript files along with SASS and LESS files for easy customization!</p>
+            <h2>About uchews</h2>
+            <p>No more hours wasted deciding on where to eat! Let uChews decide for you based on your groups preferences. Get an expertly algorithmically narrowed down select of top restaurants in your area and price range. Utlizes Google Places API and algorithms to deliver choices for your group to make, leading to a top 3 list of restaurants.</p>
           </div>
         </div>
       </div>
@@ -89,9 +82,45 @@
     <section id="download" class="download-section content-section text-center">
       <div class="container">
         <div class="col-lg-8 mx-auto">
-          <h2>Download Grayscale</h2>
-          <p>You can download Grayscale for free on the preview page at Start Bootstrap.</p>
-          <a href="http://startbootstrap.com/template-overviews/grayscale/" class="btn btn-default btn-lg">Visit Download Page</a>
+          <h2>Getting started from the repo</h2>
+          <h4>Cloud Database Setup</h4>
+          <ol>
+            <li>setup an account at mlab.com</li>
+            <li>in your dashboard, click creat new under MongoDB Deployments</li>
+            <li>select amazon as your cloud provider and select sandbox as your plan type</li>
+            <li>select US as your AWS region</li>
+            <li>name your database, and submit your order</li>
+            <li>in your dashboard, selet your newly created database</li>
+            <li>click on users and add a user</li>
+            <li>inside your .env file add:<br />
+              DB_USER=[username]<br />
+              DB_PASS=[password]</li>
+          </ol>
+          <h4>API key setup</h4>
+          <ol>
+            <li>create a Google API key</li>
+            <li>enable Google Places API Web Service</li>
+            <li>enable Google Maps Geocoding API</li>
+            <li>enable Google Maps JavaScript API</li>
+            <li>inside Credentials, select the api key</li>
+            <li>select HTTP referrers (web sites) under Application Restrictions</li>
+            <li>add the following urls to Accept requests from these HTTP referrers (web sites) (Optional):<br />
+              *127.0.0.1:1337<br />
+              *frozen-beach-49440.herokuapp.com*</li>
+            <li>inside of your .env file add: <br />
+              GOOGLE_API_KEY=[api key]</li>
+            <li>inside of map.jsx insert your API key as a string on line 86</li>
+
+          </ol>
+          <h4>OAuth 2.0 client ID</h4>
+          <p>This is necessary to enable Google sign-in</p>
+          <ol>
+            <li>create a client ID from console.developers.google.com for OAuth 2.0 client IDs <br />
+              https://developers.google.com/identity/sign-in/web/devconsole-project is a helpful tutorial</li>
+            <li>set the GOOGLE_CLIENT_ID, GOOGLE_CLIENT_SECRET, and LOCAL_GOOGLE_REDIRECT variables in your .env file <br />
+              these three variables are all accessed in server/index.js when the GoogleStrategy is defined for passport</li>
+            <li>pay attention to step 5 in the tutorial above: you must authorize separate redirect urls for testing on your local machine and the deployed website</li>
+          </ol>
         </div>
       </div>
     </section>
@@ -101,28 +130,23 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-8 mx-auto">
-            <h2>Contact Start Bootstrap</h2>
-            <p>Feel free to leave us a comment on the
-              <a href="http://startbootstrap.com/template-overviews/grayscale/">Grayscale template overview page</a>
-              on Start Bootstrap to give some feedback about this theme!</p>
+            <h2>Creator Github Accounts</h2>
+
             <ul class="list-inline banner-social-buttons">
               <li class="list-inline-item">
-                <a href="https://twitter.com/SBootstrap" class="btn btn-default btn-lg">
-                  <i class="fa fa-twitter fa-fw"></i>
-                  <span class="network-name">Twitter</span>
-                </a>
+                <p>Ray Huynh
+                  <a href="https://github.com/huynhr">huynhr</a>
+                </p>
               </li>
               <li class="list-inline-item">
-                <a href="https://github.com/BlackrockDigital/startbootstrap" class="btn btn-default btn-lg">
-                  <i class="fa fa-github fa-fw"></i>
-                  <span class="network-name">Github</span>
-                </a>
+                <p>Katelyn Stamas
+                  <a href="https://github.com/cakelyn">cakelyn</a>
+                </p>
               </li>
               <li class="list-inline-item">
-                <a href="https://plus.google.com/+Startbootstrap/posts" class="btn btn-default btn-lg">
-                  <i class="fa fa-google-plus fa-fw"></i>
-                  <span class="network-name">Google+</span>
-                </a>
+                <p>Brian Binder
+                  <a href="https://github.com/pray4mojo">pray4mojo</a>
+                </p>
               </li>
             </ul>
           </div>
@@ -152,6 +176,15 @@
 
     <!-- Custom scripts for this template -->
     <script src="js/grayscale.min.js"></script>
+    <script>
+      $('body').append(
+      '<a href="http://hackreactor.com"> \
+      <img style="position: fixed; top: 0; right: 0; border: 0;" \
+      src="http://i.imgur.com/x86kKmF.png" \
+      alt="Built at Hack Reactor"> \
+      </a>'
+      );
+    </script>
 
   </body>
 
