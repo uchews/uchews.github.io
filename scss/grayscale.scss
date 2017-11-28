@@ -296,3 +296,8 @@ img::-moz-selection {
 body {
   -webkit-tap-highlight-color: fade-out(white, .8);
 }
+
+.container {
+  background: #000;
+  opacity: 0.75;
+}
